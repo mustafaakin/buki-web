@@ -1,0 +1,11 @@
+h3 Images
+	br
+	small The prepared VM images that you have.	
+hr
+table.table.table-striped.table-condensed
+	tr
+		th Image Name
+		th Host
+	tr(ng-repeat="vm in vms")
+		td {{ vm.name }}
+		td {{ vm.host }}

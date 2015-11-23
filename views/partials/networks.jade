@@ -1,0 +1,17 @@
+h3 Networks
+hr
+table.table.table-striped.table-condensed
+	tr
+		th Name
+		th Mode
+		th Bridge
+		th Address
+		th Netmask
+		th Host
+	tr(ng-repeat="vm in vms")
+		td {{ vm.name }}
+		td {{ vm.forward.mode }}
+		td {{ vm.bridge.name }} 
+		td {{ vm.ip[0].address }} 
+		td {{ vm.ip[0].netmask }} 		
+		td {{ vm.host }}

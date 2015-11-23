@@ -1,0 +1,25 @@
+h3 VMs
+	br 
+	small Create virtual machines
+hr
+table.table.table-striped.table-condensed
+	tr
+		th VM Name
+		th CPUs
+		th Memory
+		th Network
+		th Host
+		th
+	tr(ng-repeat="vm in vms")
+		td {{ vm.name }}
+		td {{ vm.cpus }}
+		td {{ vm.memory / 1024 }} 
+		td {{ vm.interfaces[0].source.network }}
+		td {{ vm.host }}
+		td
+			a.btn.btn-danger.btn-sm.btn-block(ng-if="vm.active") 
+				i.fa.fa-stop
+				span  STOP
+			a.btn.btn-primary.btn-sm.btn-block(ng-if="!vm.active") 
+				i.fa.fa-play
+				span  START

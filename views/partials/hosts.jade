@@ -1,0 +1,9 @@
+h3 Physical hosts
+	br
+	small The physical machines that hosts your virtual machines, images and networks.
+hr
+table.table.table-striped.table-condensed
+	tr
+		th API Gateway
+	tr(ng-repeat="vm in vms")
+		td {{ vm }}

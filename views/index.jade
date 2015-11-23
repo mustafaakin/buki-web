@@ -1,0 +1,44 @@
+html
+	head
+		title buki-web
+		link(rel="stylesheet",href="/css/font-awesome.min.css")
+		link(rel="stylesheet",href="/css/bootstrap.min.css")
+		script(src="/js/angular.js")
+		script(src="/js/angular-route.js")
+		script(src="/js/ui-bootstrap.js")
+		script(src="/js/ui-bootstrap-tpls.js")
+		script(src="/js/main.js")
+		script(src="/js/controllers.js")
+	body(ng-app="MyApp")
+		.container
+			.row
+				center
+					h1 buki-web
+						br
+						small One stop VM management tool
+				hr
+			.row
+				.col-sm-3
+					.list-group
+						a(href="#/hosts",ng-class="{active: menu == 'hosts'}",ng-click="menu='hosts'").list-group-item
+							h4.list-group-item-heading
+								i.fa.fa-server 
+								span  Physical Hosts
+							p.list-group-item-text Information about running virtual machines on your system
+						a(href="#/vms",ng-class="{active: menu == 'vms'}",ng-click="menu='vms'").list-group-item
+							h4.list-group-item-heading
+								i.fa.fa-laptop
+								span  Virtual Machines
+							p.list-group-item-text VMs currently running or stooped by your system
+						a(href="#/networks",ng-class="{active: menu == 'networks'}",ng-click="menu='networks'").list-group-item
+							h4.list-group-item-heading 
+								i.fa.fa-globe
+								span  Networks
+							p.list-group-item-text Virtual networks on each system
+						a(href="#/images",ng-class="{active: menu == 'images'}",ng-click="menu='images'").list-group-item
+							h4.list-group-item-heading
+								i.fa.fa-file
+								span  Images
+							p.list-group-item-text Base VM images for easy instantiation
+				.col-sm-9
+					#content(ng-view="", autoscroll="")

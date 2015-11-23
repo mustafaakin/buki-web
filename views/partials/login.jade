@@ -1,0 +1,21 @@
+.welcome(style="height:calc( 100% - 50px )")
+	.container
+		.row
+			.col-sm-6.col-sm-offset-3
+				br
+				br
+				br
+				img(src="img/cloud.png",height="50")
+				h1.white Login to MyCloud
+				hr
+				form.form-horizontal
+					.form-group
+						label Your Email
+						input(type="email", placeholder="john@example.org").form-control
+					.form-group
+						label Your Password
+						input(type="password", placeholder="passw0rd").form-control
+					.form-group
+						a.pull-right.btn.btn-primary(type='submit',href="/panel")
+							i.fa.fa-sign-in
+							|  Login
