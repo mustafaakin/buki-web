@@ -1,7 +1,15 @@
+.pull-right
+	a.btn.btn-primary(href="#/vm/create")
+		i.fa.fa-plus
+		span  Create a new VM
 h3 VMs
 	br 
 	small Create virtual machines
 hr
+.pull-right
+	small 
+		b Updated on 
+		span {{ lastUpdate | date:'HH:mm:ss' }}
 table.table.table-striped.table-condensed
 	tr
 		th VM Name
@@ -17,9 +25,9 @@ table.table.table-striped.table-condensed
 		td {{ vm.interfaces[0].source.network }}
 		td {{ vm.host }}
 		td
-			a.btn.btn-danger.btn-sm.btn-block(ng-if="vm.active") 
+			a.btn.btn-danger.btn-xs.btn-block(ng-show="vm.active",ng-click="stopVM(vm)") 
 				i.fa.fa-stop
 				span  STOP
-			a.btn.btn-primary.btn-sm.btn-block(ng-if="!vm.active") 
+			a.btn.btn-primary.btn-xs.btn-block(ng-hide="vm.active",ng-click="startVM(vm)") 
 				i.fa.fa-play
 				span  START

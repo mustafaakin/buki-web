@@ -8,6 +8,7 @@ app.config(['$routeProvider', function($routeProvider) {
 		["/vms", "VMsCtrl"],
 		["/images", "ImagesCtrl"],
 		["/networks", "NetworksCtrl"],
+		["/vm/create", "VMCreateCtrl"],		
 	];
 
 	for (var i in routes) {
